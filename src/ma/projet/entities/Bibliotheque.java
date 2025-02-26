@@ -5,13 +5,12 @@ import java.util.Arrays;
 public class Bibliotheque {
 	protected int capacite;
 	Document[] documents;
-	int comp;
+	int nombreDoc;
 
 	public Bibliotheque(int capacite) {
-		super();
 		this.capacite = capacite;
 		this.documents = new Document [capacite];
-		this.comp = 0;
+		this.nombreDoc = 0;
 	}
 
 	public int getCapacite() {
@@ -29,20 +28,20 @@ public class Bibliotheque {
 	}
 	
 	public boolean ajouter (Document doc) {
-		if(capacite <= comp) {
+		if(capacite <= nombreDoc) {
 			return false;
 		}
-		documents[comp++] = doc;
+		documents[nombreDoc++] = doc;
 		return true;
 	}
 	
 	public boolean supprimer (Document doc) {
-		for(int i = 0; i < comp; i++) {
+		for(int i = 0; i < nombreDoc; i++) {
 			if(documents[i].getNumEnreg() == doc.getNumEnreg()) {
-				for(int j = 0; j < comp; j++) {
+				for(int j = 0; j < nombreDoc; j++) {
 					documents[j] = documents[j + 1];
 				}
-				documents[--comp] = null;
+				documents[--nombreDoc] = null;
 				return true;
 			}
 		}

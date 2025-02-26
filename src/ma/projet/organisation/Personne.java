@@ -8,7 +8,7 @@ public class Personne {
 	protected String telephone;
 	protected String email;
 	
-	int comp;
+	static int comp;
 	
 	public Personne(String nom, String prenom, String telephone, String email) {
 		super();

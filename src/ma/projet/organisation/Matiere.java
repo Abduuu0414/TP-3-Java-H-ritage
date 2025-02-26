@@ -5,10 +5,12 @@ public class Matiere {
 	protected String code;
 	protected String libelle;
 	protected Formateur formateur;
+	
+	static int comp;
 
 	public Matiere(int id, String code, String libelle, Formateur formateur) {
 		super();
-		this.id = id;
+		this.id = ++comp;
 		this.code = code;
 		this.libelle = libelle;
 		this.formateur = formateur;
